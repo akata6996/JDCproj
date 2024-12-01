@@ -1,0 +1,82 @@
+/* Keeping the existing imports and variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    --primary-hover: #ff4b4b;
+    --text-dark: #ffffff;  /* Changed to white */
+    --text-light: #ffffff; /* Changed to white */
+    --bg-gradient: linear-gradient(120deg, #f7f8fc, #eef1f7);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 6px 14px rgba(0, 0, 0, 0.2);
+    --shadow-primary: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+/* Updated text colors throughout */
+body {
+    color: #ffffff;
+}
+
+h2, h1, p {
+    color: #ffffff;
+}
+
+.section-content h2 {
+    color: #ffffff;
+}
+
+.section-content p,
+.section-content ul {
+    color: #ffffff;
+}
+
+.section-content ul li {
+    color: #ffffff;
+}
+
+/* Service cards text */
+.service-card {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.service-card h3 {
+    color: #ffffff;
+}
+
+.service-card p {
+    color: #ffffff;
+}
+
+/* Form labels remain dark for contrast */
+form label {
+    color: #000;
+}
+
+/* Form inputs text */
+form input,
+form textarea,
+form select {
+    color: #000;
+}
+
+/* Footer text */
+footer {
+    color: #ffffff;
+}
+
+/* Navigation links */
+header nav ul li a {
+    color: #ffffff;
+}
+
+/* Contact header */
+.contact-header {
+    color: #ffffff;
+}
+
+/* Book text (if not meant to be dark) */
+.book {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+}

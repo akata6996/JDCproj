@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Schedule an appointment with Attorney John D. Cadore - Legal consultation booking">
+    <meta name="author" content="John D. Cadore">
+    <title>Schedule Appointment - John D. Cadore, MPA.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>John D. Cadore, MPA.</h1>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="appointment.html" aria-current="page">Appointment</a></li>
+                    <li><a href="profpage.html">Attorney Profile</a></li>
+                    <li><a href="familylaw.html">Family Law</a></li>
+                    <li><a href="immigration.html">Immigration</a></li>
+                    <li><a href="civilrights.html">Civil Rights Municipal</a></li>
+                    <li><a href="criminalLaw.html">Criminal Law</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="appointments" class="fade-in-hidden">
+            <div class="container">
+                <h1>Schedule an Appointment</h1>
+                <p style="color: #fff;">Schedule a meeting with me by filling out the form below:</p>
+
+                
+                <form action="https://formsubmit.co/arellanokurt848@gmail.com" method="POST" class="appointment-form">
+                    <input type="hidden" name="_next" value="index.html">
+                    
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Contact Number:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-date">Appointment Date:</label>
+                        <input type="date" id="appointment-date" name="appointment-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="appointment-time">Appointment Time:</label>
+                        <input type="time" id="appointment-time" name="appointment-time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="cta">Schedule Appointment</button>
+                </form>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+        <p>CALL FOR YOUR FREE CASE EVALUATION</p>
+        <p>Email: <a href="mailto:info@johndcadore.com" class="email-protection">info@johndcadore.com</a></p>
+        <p>Phone: <a href="tel:+16077252150" class="phone-protection">(607) 725-2150</a></p>
+        <p>Fax: <a href="tel:+1607779408" class="fax-protection">(607) 777 - 9408</a></p>
+        <p>Address: 34 Chenango Street, Suite 202, Binghamton, NY 13901</p>
+        <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+    </div>
+</footer>
+    <script src="scripts.js" defer></script>
+</body>
+</html>

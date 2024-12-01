@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Civil Rights & Municipal Law Services by Attorney John D. Cadore">
+    <meta name="author" content="John D. Cadore">
+    <title>Civil Rights & Municipal Law - John D. Cadore, MPA.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>John D. Cadore, MPA.</h1>
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="books.html">Books</a></li>
+                    <li><a href="appointment.html">Appointment</a></li>
+                    <li><a href="profpage.html">Attorney Profile</a></li>
+                    <li><a href="familylaw.html">Family Law</a></li>
+                    <li><a href="immigration.html">Immigration</a></li>
+                    <li><a href="civilrights.html">Civil Rights Municipal</a></li>
+                    <li><a href="criminalLaw.html">Criminal Law</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="services">
+            <div class="container">
+                <h2>Civil Rights & Municipal Law Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Civil Rights Protection</h3>
+                        <p>Defending individuals against discrimination, police misconduct, and violations of constitutional rights.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Municipal Law</h3>
+                        <p>Expert guidance in local government regulations, zoning issues, and administrative proceedings.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>Employment Discrimination</h3>
+                        <p>Representation in workplace discrimination, harassment, and wrongful termination cases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Request a Consultation</h2>
+                <form action="https://formsubmit.co/arellanokurt848@gmail.com" method="POST" class="appointment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Contact Number:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Type of Case:</label>
+                        <select id="service" name="service">
+                            <option value="civil-rights">Civil Rights Violation</option>
+                            <option value="municipal">Municipal Law Issue</option>
+                            <option value="employment">Employment Discrimination</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Case Details:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit">Submit Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <p>CALL FOR YOUR FREE CASE EVALUATION</p>
+            <p>Email: <a href="mailto:info@johndcadore.com">info@johndcadore.com</a></p>
+            <p>Phone: <a href="tel:+16077252150">(607) 725-2150</a></p>
+            <p>Fax: <a href="tel:+1607779408">(607) 777-9408</a></p>
+            <p>Address: 34 Chenango Street, Suite 202, Binghamton, NY 13901</p>
+            <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
