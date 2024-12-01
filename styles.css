@@ -429,3 +429,48 @@ header nav ul {
     text-align: center;
     margin-top: 1rem;
 }
+
+/* Mobile-friendly styles for the appointment form */
+@media screen and (max-width: 768px) {
+    .container {
+      width: 95%;
+      padding: 0 10px;
+    }
+  
+    .appointment-form {
+      max-width: 100%;
+      padding: 15px;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px; /* Prevents iOS zoom on input focus */
+    }
+  
+    /* Improve navigation for mobile */
+    nav ul {
+      flex-direction: column;
+      padding: 0;
+    }
+  
+    nav ul li {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    /* Make the submit button more touch-friendly */
+    button.cta {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+  }
+  
