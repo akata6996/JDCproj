@@ -13,8 +13,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
-<body>
+<body>    
     <header>
         <div class="container">
             <h1>John D. Cadore, MPA.</h1>
@@ -22,7 +26,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="books.html">Books</a></li>
-                    <li><a href="appointment.html" aria-current="page">Appointment</a></li>
+                    <li><a href="appointment.html">Appointment</a></li>
                     <li><a href="profpage.html">Attorney Profile</a></li>
                     <li><a href="familylaw.html">Family Law</a></li>
                     <li><a href="immigration.html">Immigration</a></li>
@@ -33,36 +37,52 @@
         </div>
     </header>
 
-    <main>
-        <section id="about">
+    <main id="main-content">
+        <section id="ggs">
             <div class="container">
                 <div class="about-content">
-                    <h1>JOHN <br> CADORE, MPA</h1>
-                    <h5>ATTORNEY AT LAW</h5>    
+                    <h2>JOHN <br> CADORE, MPA</h2>
+                    <h3>ATTORNEY AT LAW</h3>    
                     
-                    <p>
-                        At John Cadore, MPA. I'm a dedicated solo practitioner focused on helping New York families navigate divorce matters in a respectful and collaborative manner. My priority is achieving the most beneficial outcome for all parties involved, especially the children.
-                    </p>
-                    <p>
-                        As an experienced New York divorce attorney, I understand the emotional and legal difficulties that divorce presents in your life. I am dedicated to serving as your trusted legal advisor, utilizing strategies to ensure a positive outcome for your new chapter. Recognizing that each divorce comes with its own unique circumstances, my goal is to assist you in attaining the future you truly deserve. Let's have a conversation about your situation and explore your options together.
-                    </p>
+                    <p>At John Cadore, MPA. I'm a dedicated solo practitioner focused on helping New York families navigate divorce matters in a respectful and collaborative manner. My priority is achieving the most beneficial outcome for all parties involved, especially the children.</p>
+                    <p>As an experienced New York divorce attorney, I understand the emotional and legal difficulties that divorce presents in your life. I am dedicated to serving as your trusted legal advisor, utilizing strategies to ensure a positive outcome for your new chapter. Recognizing that each divorce comes with its own unique circumstances, my goal is to assist you in attaining the future you truly deserve. Let's have a conversation about your situation and explore your options together.</p>
                     <a href="books.html" class="cta" aria-label="Learn more about my books">Discover My Books</a>
                 </div>
             </div>
         </section>
+        <hr style="border: none; height: 5px; background-color: gold; margin: 2rem 0;">
+        <section id="kokoyproj" class="container" style="text-align: center;">
+            <div class="project-content">
+                <h1>BOARD CERTIFIED FAMILY LAWYER</h1>
+                <p>Your Legal Advocate For Life's Transitions</p>
+            </div>
+        </section>
     </main>
-
     <footer>
-            <div class="contact-info">
-            <p>CALL FOR YOUR FREE CASE EVALUATION</p>
-            <p>Email: <a href="mailto:info@johndcadore.com" class="email-protection">info@johndcadore.com</a></p>
-            <p>Phone: <a href="tel:+16077252150" class="phone-protection">(607) 725-2150</a></p>
-            <p>Fax: <a href="tel:+1607779408" class="fax-protection">(607) 777 - 9408</a></p>
-            <p>Address: 34 Chenango Street, Suite 202, Binghamton, NY 13901</p>
-            <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p class="cta-text">CALL FOR YOUR FREE CASE EVALUATION</p>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:lawyer.JCadore@hotmail.com">lawyer.JCadore@hotmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+16077252150">(607) 725-2150</a></p>
+                        <p><i class="fas fa-fax"></i> <a href="tel:+16077779408">(607) 777-9408</a></p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <address>
+                        <i class="fas fa-map-marker-alt"></i>
+                        34 Chenango Street, Suite 202<br>
+                        Binghamton, NY 13901
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
-
     <script src="scripts.js" defer></script>
-</body>
-</html>
+</body></html>

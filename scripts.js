@@ -42,3 +42,20 @@ const handleScrollAnimation = () => {
 
 // Initial animation check
 handleScrollAnimation();
+
+// Create and inject Schema.org JSON-LD
+const schemaScript = document.createElement('script');
+schemaScript.type = 'application/ld+json';
+schemaScript.text = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "John D. Cadore, MPA.",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "34 Chenango Street, Suite 202",
+        "addressLocality": "Binghamton",
+        "addressRegion": "NY",
+        "postalCode": "13901"
+    }
+});
+document.head.appendChild(schemaScript);
