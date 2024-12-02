@@ -5,7 +5,7 @@
 :root {
     --primary-color: #ff6b6b;
     --primary-hover: #ff4b4b;
-    --text-dark: #ffffff;
+    --text-dark: #000000;
     --text-light: #555;
     --bg-gradient: linear-gradient(120deg, #f7f8fc, #eef1f7);
     --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -162,31 +162,110 @@ section {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
 }
-
-/* Books Grid */
+  .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #ffd700;
+      position: relative;
+  }
 .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem;
+}
+
+.book-card {
+    position: relative;
+    transition: transform 0.3s ease;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.book-cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.book-cover img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.book-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(44, 62, 80, 0.9);
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
 }
 
-/* Book Styles */
-.book {
-    color: #000000;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.3s, box-shadow 0.3s;
+.book-card:hover .book-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-description {
+    color: white;
     text-align: center;
-    width: 250px;
-    border: 1px solid var(--text-gold);
+    margin-bottom: 1.5rem;
 }
 
-.book:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+.book-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.preview-btn, .buy-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.preview-btn {
+    background: transparent;
+    border: 2px solid #ffd700;
+    color: #ffd700;
+}
+
+.buy-btn {
+    background: #ffd700;
+    color: #2c3e50;
+}
+
+.preview-btn:hover, .buy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.book-card h3 {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+    .books-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+    }
 }
 
 /* Keep all existing CSS code above, then add these updated form styles */
@@ -525,109 +604,295 @@ header nav ul {
       font-size: clamp(1rem, 2vw, 1.25rem);
       line-height: 1.5;
   }
-
-  @media screen and (max-width: 768px) {
-      #kokoyproj {
-          padding: 1.5rem 1rem;
-      }
+    @media screen and (max-width: 768px) {
+        #kokoyproj {
+            padding: 1.5rem 1rem;
+        }
     
-      #kokoyproj .project-content {
-          padding: 0 10px;
+        #kokoyproj .project-content {
+            padding: 0 10px;
+        }
+    }
+  footer {
+      background: linear-gradient(to bottom, #2c3e50, #1a252f);
+      color: #ffffff;
+      padding: 3rem 0;
+      margin-top: 4rem;
+  }
+
+  .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+  }
+
+  .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+  }
+
+  .footer-section {
+      flex: 1;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+  }
+
+  .footer-section:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-section h4 {
+      color: #ffd700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+  }
+
+  .divider {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #ffd700, transparent);
+      margin: 1rem 0;
+  }
+
+  .contact-item, .location-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem 0;
+  }
+
+  .bounce-icon {
+      color: #ffd700;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+  }
+
+  .contact-item:hover .bounce-icon,
+  .location-item:hover .bounce-icon {
+      transform: scale(1.2);
+  }
+
+  .contact-details a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  }
+
+  .contact-details a:hover {
+      color: #ffd700;
+  }
+
+  .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+  }
+
+  .social-icon {
+      color: #ffffff;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+  }
+
+  .social-icon:hover {
+      color: #ffd700;
+      transform: translateY(-3px);
+  }
+
+  .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+  }
+
+  .cta-text {
+      color: #ffd700;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 1rem 0;
+  }
+
+  @media (min-width: 768px) {
+      .footer-content {
+          flex-direction: row;
+          gap: 2rem;
       }
   }
-#kokoyproj footer {
-    background: linear-gradient(135deg, #023632 0%, #012422 100%);
-    color: #ffffff;
-    padding: 4rem 0 2rem;
-    position: relative;
-    margin-top: 6rem;
-    border-top: 2px solid #FFD700;
-}
 
-#kokoyproj .footer-content {
+.certificates-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
-#kokoyproj .footer-section {
+.certificate-card {
     position: relative;
-}
-
-#kokoyproj .footer-section h3 {
-    color: #FFD700;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-
-#kokoyproj .footer-section h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 60px;
-    height: 3px;
-    background: #FFD700;
-    border-radius: 2px;
-}
-
-#kokoyproj .footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-#kokoyproj .footer-section ul li {
-    margin-bottom: 1rem;
-}
-
-#kokoyproj .footer-section a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-#kokoyproj .footer-section a:hover {
-    color: #FFD700;
-    transform: translateX(5px);
-}
-
-#kokoyproj .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    margin-top: 3rem;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
-}
-
-#kokoyproj .social-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-#kokoyproj .social-links a {
-    color: #FFD700;
-    font-size: 1.5rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-#kokoyproj .social-links a:hover {
-    transform: translateY(-3px);
+.certificate-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
 }
 
-@media screen and (max-width: 768px) {
-    #kokoyproj footer {
-        padding: 3rem 0 1.5rem;
-    }
-    
-    #kokoyproj .footer-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+.certificate-card:hover {
+    transform: translateY(-5px);
+}
+
+.certificate-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.certificate-card:hover .certificate-overlay {
+    transform: translateY(0);
+}
+
+.certificate-overlay h3 {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-overlay p {
+    color: white;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .certificates-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
     }
 }
+
+.gold-divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #ffd700, transparent);
+    margin: 3rem auto;
+    width: 80%;
+}
+
+/* Family Law Page Styles */
+.service-card {
+    background: linear-gradient(145deg, #ffffff, #f5f5f5);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #D4AF37;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+section h2 {
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.appointment-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #D4AF37;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: linear-gradient(45deg, #D4AF37, #FFD700);
+    color: rgb(0, 0, 0);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Service card animations */
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.4s; }
+.service-card:nth-child(4) { animation-delay: 0.6s; }
+.service-card:nth-child(5) { animation-delay: 0.8s; }
+.service-card:nth-child(6) { animation-delay: 1s; }
