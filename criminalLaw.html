@@ -81,39 +81,53 @@
                 </div>
             </section>
 
+
             <section id="contact">
-                <h2>Free Case Evaluation</h2>
-                <form action="https://formsubmit.co/arellanokurt848@email.com" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required minlength="2" pattern="[A-Za-z\s]+" title="Please enter a valid name">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Contact Number</label>
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="case-type">Type of Case</label>
-                        <select id="case-type" name="case-type" required>
-                            <option value="">Select Case Type</option>
-                            <option value="criminal-defense">Criminal Defense</option>
-                            <option value="dui">DUI Defense</option>
-                            <option value="drug-offenses">Drug Offenses</option>
-                            <option value="violent-crimes">Violent Crimes</option>
-                            <option value="white-collar">White Collar Crimes</option>
-                            <option value="appeals">Appeals</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Case Details</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit">Request Free Consultation</button>
-                </form>
+                <div class="container">
+                    <h2>Schedule a Consultation</h2>
+                    <form action="https://formsubmit.co/arellanokurt848@gmail.com" method="POST" class="appointment-form">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Contact Number:</label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone" 
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                                   value="123-456-7890"
+                                   required>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="case-type">Type of Case</label>
+                            <select id="case-type" name="case-type" required>
+                                <option value="">Select Case Type</option>
+                                <option value="criminal-defense">Criminal Defense</option>
+                                <option value="dui">DUI Defense</option>
+                                <option value="drug-offenses">Drug Offenses</option>
+                                <option value="violent-crimes">Violent Crimes</option>
+                                <option value="white-collar">White Collar Crimes</option>
+                                <option value="appeals">Appeals</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Case Details:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit">Request Consultation</button>
+                    </form>
+                </div>
             </section>
         </div>
     </main>
