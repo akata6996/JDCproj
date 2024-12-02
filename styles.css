@@ -24,9 +24,32 @@ body {
     flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
 }
+  body::before {
+      content: '';
+      position: fixed;
+      top: 50%;
+      right: 50px;
+      transform: translateY(-50%);
+      width: 400px;
+      height: 400px;
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.5;
+      z-index: -1;
+      transition: all 0.3s ease;
+      pointer-events: auto;
+      cursor: pointer;
+  }
 
-/* Heading Styles */
+  /* This is the correct selector syntax for pseudo-element hover */
+  body:hover::before {
+      transform: translateY(-50%) scale(1.05);
+      opacity: 0.7;
+  }/* Heading Styles */
 h2,h1 {
     color: #ffffff;
     font-weight: bold;
@@ -138,24 +161,6 @@ section {
 .cta:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
-}
-
-/* Image Styles */
-.about-image {
-    flex: 1;
-    text-align: center;
-}
-
-.about-image img {
-    width: 80%;
-    max-width: 400px;
-    border-radius: 50%;
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.5s ease;
-}
-
-.about-image img:hover {
-    transform: scale(1.05);
 }
 
 /* Books Grid */
@@ -474,3 +479,139 @@ header nav ul {
     }
   }
   
+  .text-black {
+      color: #000000;
+  }
+
+  /* Remove border from last section */
+  #education {
+      border-bottom: none;
+  }
+  
+  .gold-line {
+    border: none;
+    height: 2px;
+    background-color: #FFD700;
+    margin: 40px 0;
+}
+
+.cert-title {
+    font-size: 2.5em;
+    text-align: center;
+    color: #FFD700;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+#kokoyproj {
+    padding: 2rem 0;
+}
+
+.project-content {
+    max-width: 10000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.project-content h2 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+}
+
+#kokoyproj footer {
+    background: linear-gradient(135deg, #023632 0%, #012422 100%);
+    color: #ffffff;
+    padding: 4rem 0 2rem;
+    position: relative;
+    margin-top: 6rem;
+    border-top: 2px solid #FFD700;
+}
+
+#kokoyproj .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+#kokoyproj .footer-section {
+    position: relative;
+}
+
+#kokoyproj .footer-section h3 {
+    color: #FFD700;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+#kokoyproj .footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: #FFD700;
+    border-radius: 2px;
+}
+
+#kokoyproj .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+#kokoyproj .footer-section ul li {
+    margin-bottom: 1rem;
+}
+
+#kokoyproj .footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+#kokoyproj .footer-section a:hover {
+    color: #FFD700;
+    transform: translateX(5px);
+}
+
+#kokoyproj .footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+#kokoyproj .social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#kokoyproj .social-links a {
+    color: #FFD700;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#kokoyproj .social-links a:hover {
+    transform: translateY(-3px);
+}
+
+@media screen and (max-width: 768px) {
+    #kokoyproj footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    #kokoyproj .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
