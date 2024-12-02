@@ -17,25 +17,41 @@
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-</head>
-<body>    
-    <header>
-        <div class="container">
-            <h1>John D. Cadore, MPA.</h1>
+<!-- Modified header section -->
+<header class="modern-header">
+    <div class="container">
+        <div class="header-wrapper">
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1>John D. Cadore, P.A.</h1>
+            </div>
+            
             <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="appointment.html">Appointment</a></li>
-                    <li><a href="profpage.html">Attorney Profile</a></li>
-                    <li><a href="familylaw.html">Family Law</a></li>
-                    <li><a href="immigration.html">Immigration</a></li>
-                    <li><a href="civilrights.html">Civil Rights & Municipal Law</a></li>
-                    <li><a href="criminalLaw.html">Criminal Law</a></li>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="books.html" class="nav-link">Books</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="familylaw.html">Family Law</a></li>
+                            <li><a href="immigration.html">Immigration</a></li>
+                            <li><a href="civilrights.html">Civil Rights & Municipal Law</a></li>
+                            <li><a href="criminalLaw.html">Criminal Law</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="appointment.html" class="nav-link">Appointment</a></li>
+                    <li><a href="profpage.html" class="nav-link">Attorney Profile</a></li>
                 </ul>
             </nav>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <main id="main-content">
         <section id="ggs">
@@ -58,60 +74,60 @@
             </div>
         </section>
     </main>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section contact-section">
-                    <h4>Contact Us</h4>
-                    <div class="divider"></div>
-                    <p class="cta-text">CALL FOR YOUR FREE CASE EVALUATION</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope bounce-icon"></i>
-                            <a href="mailto:lawyer.JCadore@hotmail.com">lawyer.JCadore@hotmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone bounce-icon"></i>
-                            <a href="tel:+16077252150">(607) 725-2150</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-fax bounce-icon"></i>
-                            <a href="tel:+16077779408">(607) 777-9408</a>
-                        </div>
+ <footer>
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section contact-section">
+                <h4>Contact Us</h4>
+                <div class="divider"></div>
+                <p class="cta-text">CALL FOR YOUR FREE CASE EVALUATION</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope bounce-icon"></i>
+                        <a href="mailto:lawyer.JCadore@hotmail.com">lawyer.JCadore@hotmail.com</a>
                     </div>
-                </div>
-    
-                <div class="footer-section location-section">
-                    <h4>Our Location</h4>
-                    <div class="divider"></div>
-                    <address>
-                        <div class="location-item">
-                            <i class="fas fa-map-marker-alt bounce-icon"></i>
-                            <div class="address-text">
-                                34 Chenango Street, Suite 202<br>
-                                Binghamton, NY 13901
-                            </div>
-                        </div>
-                    </address>
-                </div>
-    
-                <div class="footer-section social-section">
-                    <h4>Connect With Us</h4>
-                    <div class="divider"></div>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <div class="contact-item">
+                        <i class="fas fa-phone bounce-icon"></i>
+                        <a href="tel:+16077252150">(607) 725-2150</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-fax bounce-icon"></i>
+                        <a href="tel:+16077779408">(607) 777-9408</a>
                     </div>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
+
+            <div class="footer-section location-section">
+                <h4>Our Location</h4>
                 <div class="divider"></div>
-                <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+                <address>
+                    <div class="location-item">
+                        <i class="fas fa-map-marker-alt bounce-icon"></i>
+                        <div class="address-text">
+                            34 Chenango Street, Suite 202<br>
+                            Binghamton, NY 13901
+                        </div>
+                    </div>
+                </address>
+            </div>
+
+            <div class="footer-section social-section">
+                <h4>Connect With Us</h4>
+                <div class="divider"></div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
-    
+        
+        <div class="footer-bottom">
+            <div class="divider"></div>
+            <p>© <script>document.write(new Date().getFullYear())</script> John D. Cadore, P.A. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
     <script src="scripts.js" defer></script>
 </body></html>

@@ -59,3 +59,41 @@ schemaScript.text = JSON.stringify({
     }
 });
 document.head.appendChild(schemaScript);
+
+// Add to your scripts.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    mobileMenuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            if (window.innerWidth < 968) {
+                e.preventDefault();
+                this.classList.toggle('active');
+            }
+        });
+    });
+});
+
+// Add this to your scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('.modern-header');
+    const body = document.body;
+    
+    function adjustBodyPadding() {
+        const headerHeight = header.offsetHeight;
+        body.style.paddingTop = headerHeight + 'px';
+    }
+
+    // Initial adjustment
+    adjustBodyPadding();
+
+    // Adjust on window resize
+    window.addEventListener('resize', adjustBodyPadding);
+});

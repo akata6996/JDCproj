@@ -16,21 +16,37 @@
 
 </head>
 <body>
-    <header>
+    <header class="modern-header">
         <div class="container">
-            <h1>John D. Cadore, MPA.</h1>
-            <nav aria-label="Main navigation">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="books.html">Books</a></li>
-                    <li><a href="appointment.html">Appointment</a></li>
-                    <li><a href="profpage.html">Attorney Profile</a></li>
-                    <li><a href="familylaw.html">Family Law</a></li>
-                    <li><a href="immigration.html">Immigration</a></li>
-                    <li><a href="civilrights.html">Civil Rights & Municipal Law</a></li>
-                    <li><a href="criminalLaw.html">Criminal Law</a></li>
-                </ul>
-            </nav>
+            <div class="header-wrapper">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Logo" class="logo">
+                    <h1>John D. Cadore, P.A.</h1>
+                </div>
+                
+                <nav aria-label="Main navigation">
+                    <button class="mobile-menu-btn" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="books.html" class="nav-link">Books</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="familylaw.html">Family Law</a></li>
+                                <li><a href="immigration.html">Immigration</a></li>
+                                <li><a href="civilrights.html">Civil Rights & Municipal Law</a></li>
+                                <li><a href="criminalLaw.html">Criminal Law</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="appointment.html" class="nav-link">Appointment</a></li>
+                        <li><a href="profpage.html" class="nav-link">Attorney Profile</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
