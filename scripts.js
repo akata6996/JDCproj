@@ -98,95 +98,35 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', adjustBodyPadding);
 });
 
-// Add this at the end of your HTML file or in scripts.js
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        this.classList.toggle('active');
-    });
-
-    // Handle dropdowns on mobile
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 968) {
-                e.preventDefault();
-                this.classList.toggle('active');
-            }
-        });
-    });
-});
-
 // Add to your existing JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    // Previous mobile menu code...
-
-    // Prevent ghost clicks
-    let touchStartY = 0;
-    document.addEventListener('touchstart', function(e) {
-        touchStartY = e.touches[0].clientY;
-    }, false);
-
-    document.addEventListener('touchmove', function(e) {
-        const touchY = e.touches[0].clientY;
-        const scrolled = touchStartY - touchY;
-
-        if (Math.abs(scrolled) > 10) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (navMenu.classList.contains('active') && 
-            !e.target.closest('.nav-menu') && 
-            !e.target.closest('.mobile-menu-btn')) {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-
-    // Toggle body scroll
-    mobileMenuBtn.addEventListener('click', function() {
-        document.body.classList.toggle('menu-open');
-    });
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.modern-nav');
+    if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
+    }
 });
-// Add this at the end of your HTML file or in a separate scripts.js
+
+// Add animation delay to paragraphs
+document.querySelectorAll('.about-content p').forEach((p, index) => {
+    p.style.animationDelay = `${0.3 * (index + 1)}s`;
+});
+
+
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    const dropdowns = document.querySelectorAll('.dropdown');
-    const header = document.querySelector('.modern-header');
-
-    // Toggle mobile menu
-    mobileMenuBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navMenu.classList.toggle('active');
-        this.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    // Handle dropdowns on mobile
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 968) {
-                e.preventDefault();
-                this.classList.toggle('active');
-            }
-        });
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!header.contains(e.target)) {
-            navMenu.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-            document.body.classList.remove('menu-open');
+    // Get current page URL
+    const currentLocation = location.href;
+    
+    // Find all nav links
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Check each link against current page URL
+    navLinks.forEach(link => {
+        if(link.href === currentLocation) {
+            link.classList.add('active');
         }
     });
 });

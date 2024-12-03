@@ -17,40 +17,59 @@
 
 </head>
 <body>
-    <header class="modern-header">
-        <div class="container">
-            <div class="header-wrapper">
-                <div class="logo-container">
-                    <img src="logo.png" alt="Logo" class="logo">
-                    <h1>John D. Cadore, P.A.</h1>
-                </div>
+    <head>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark modern-nav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center brand-hover" href="index.html">
+                    <img src="logo.png" alt="Logo" height="60" class="me-2 logo-spin">
+                    <span class="brand-text">John D. Cadore, P.A.</span>
+                </a>
                 
-                <nav aria-label="Main navigation">
-                    <button class="mobile-menu-btn" aria-label="Toggle menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="books.html" class="nav-link">Books</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="nav-link">Services</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="familylaw.html">Family Law</a></li>
-                                <li><a href="immigration.html">Immigration</a></li>
-                                <li><a href="civilrights.html">Civil Rights & Municipal Law</a></li>
-                                <li><a href="criminalLaw.html">Criminal Law</a></li>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" 
+                        data-bs-target="#navbarContent">
+                    <span class="toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item nav-item-hover">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="books.html">Books</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" 
+                               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <li><a class="dropdown-item" href="familylaw.html">Family Law</a></li>
+                                <li><a class="dropdown-item" href="immigration.html">Immigration</a></li>
+                                <li><a class="dropdown-item" href="civilrights.html">Civil Rights & Municipal Law</a></li>
+                                <li><a class="dropdown-item" href="criminalLaw.html">Criminal Law</a></li>
                             </ul>
                         </li>
-                        <li><a href="appointment.html" class="nav-link">Appointment</a></li>
-                        <li><a href="profpage.html" class="nav-link">Attorney Profile</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="appointment.html">Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profpage.html">Attorney Profile</a>
+                        </li>
                     </ul>
-                </nav>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
-
     <main>
         <div class="container">
             <section id="services">
@@ -188,7 +207,28 @@
             </div>
         </div>
     </footer>
-
     <script src="scripts.js" defer></script>
-</body>
-</html>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Optional: Add this script for active link highlighting -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get current page URL
+        const currentLocation = location.href;
+        
+        // Find all nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // Check each link against current page URL
+        navLinks.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+    });
+    </script>
+    
+    
+    </body></html>
