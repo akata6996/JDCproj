@@ -97,3 +97,62 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adjust on window resize
     window.addEventListener('resize', adjustBodyPadding);
 });
+
+// Add this at the end of your HTML file or in scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+    });
+
+    // Handle dropdowns on mobile
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                this.classList.toggle('active');
+            }
+        });
+    });
+});
+
+// Add to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Previous mobile menu code...
+
+    // Prevent ghost clicks
+    let touchStartY = 0;
+    document.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, false);
+
+    document.addEventListener('touchmove', function(e) {
+        const touchY = e.touches[0].clientY;
+        const scrolled = touchStartY - touchY;
+
+        if (Math.abs(scrolled) > 10) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navMenu.classList.contains('active') && 
+            !e.target.closest('.nav-menu') && 
+            !e.target.closest('.mobile-menu-btn')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+
+    // Toggle body scroll
+    mobileMenuBtn.addEventListener('click', function() {
+        document.body.classList.toggle('menu-open');
+    });
+});

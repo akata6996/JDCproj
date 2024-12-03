@@ -986,15 +986,114 @@ button[type="submit"]:active {
 .service-card:nth-child(5) { animation-delay: 0.8s; }
 .service-card:nth-child(6) { animation-delay: 1s; }
 
-/* Modern Header Styles */
+/* Modern Header Mobile Fixes */
 .modern-header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    height: auto;
+    min-height: 70px;
+}
+
+/* Mobile Menu Button Improvements */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    position: relative;
+}
+
+@media (max-width: 968px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px; /* Match header height */
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        display: none;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        padding-left: 1rem;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .nav-link {
+        padding: 1rem;
+        width: 100%;
+        display: block;
+    }
+
+    /* Improve touch targets */
+    .nav-menu li, 
+    .dropdown-menu li {
+        width: 100%;
+    }
+
+    .nav-menu li a, 
+    .dropdown-menu li a {
+        padding: 1rem;
+        display: block;
+    }
+
+    /* Mobile menu button animation */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+/* Fix for iOS touch events */
+@media (hover: none) {
+    .nav-link:hover:after {
+        width: 0;
+    }
+
+    .nav-link:active:after {
+        width: 100%;
+        left: 0;
+    }
+}
+
+/* Prevent body scroll when menu is open */
+body.menu-open {
+    overflow: hidden;
 }
 
 .header-wrapper {
@@ -1191,3 +1290,4 @@ main {
 html {
     scroll-behavior: smooth;
 }
+
