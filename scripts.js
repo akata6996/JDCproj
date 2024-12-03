@@ -156,3 +156,37 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.toggle('menu-open');
     });
 });
+// Add this at the end of your HTML file or in a separate scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const header = document.querySelector('.modern-header');
+
+    // Toggle mobile menu
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+        this.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+
+    // Handle dropdowns on mobile
+    dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            if (window.innerWidth <= 968) {
+                e.preventDefault();
+                this.classList.toggle('active');
+            }
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!header.contains(e.target)) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+});
